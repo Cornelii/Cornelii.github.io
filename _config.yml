@@ -1,8 +1,8 @@
-title:             Cornel's PlayGround
-email:             onelife0985@gmail.com
-description:       Sort of Scientific things
-author:            Cornelii.G.Son
-baseurl:           "/startbootstrap-clean-blog-jekyll"
+title:             "Cornel's PlayGround"
+email:             "onelife0985@gmail.com"
+description:       "Sort of Scientific things"
+author:            "Cornelii.G.Son"
+baseurl:           "/"
 url:               "http://cornelii.github.io"
 
 # Social Profiles
