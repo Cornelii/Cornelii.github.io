@@ -1,0 +1,19 @@
+title:             Cornel's PlayGround
+email:             onelife0985@gmail.com
+description:       Sort of Scientific things
+author:            Cornelii.G.Son
+baseurl:           "/startbootstrap-clean-blog-jekyll"
+url:               "http://cornelii.github.io"
+
+# Social Profiles
+twitter_username:  SBootstrap
+github_username:   BlackrockDigital
+facebook_username: StartBootstrap
+
+# Build settings
+markdown:          kramdown
+paginate:          5
+paginate_path:     "/posts/page:num/"
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
