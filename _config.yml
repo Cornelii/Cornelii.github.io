@@ -19,7 +19,7 @@ plugins:
   - jekyll-paginate
 
 # collections
-collections_dir: drillsOn
+collections_dir: mycollections
 collections:
   EngMath:
     output: ture
