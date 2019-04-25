@@ -1,7 +1,8 @@
 ---
-layout: page
+layout: MyPage
 title: Posts
 background: '/img/bg-post.jpg'
 ---
 
-<h2>Yeah</h2>
+## Oh Yes2
+$$a=3$$

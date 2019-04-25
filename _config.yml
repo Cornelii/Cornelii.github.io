@@ -17,3 +17,11 @@ paginate_path:     "/posts/page:num/"
 plugins:
   - jekyll-feed
   - jekyll-paginate
+
+# collections
+collections_dir: drillsOn
+collections:
+  EngMath:
+    output: ture
+    permalink: /:name
+  
