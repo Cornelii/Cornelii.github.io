@@ -22,6 +22,20 @@ plugins:
 collections_dir: mycollections
 collections:
   EngMath:
-    output: ture
+    output: true
+    permalink: /:name
+  Control:
+    output: true
+    permalink: /:name
+  RL:
+    output: true
+    permalink: /:name
+  MoM:
+    output: true
+    permalink: /:name
+
+  Django:
+    output: true
     permalink: /:name
   
+    
