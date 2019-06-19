@@ -12,6 +12,6 @@ permalink: log.html
 <div class="">Django</div>
 {% for content in site.Django %}
     <strong>{{content.updated_at}}</strong>
-    <a href="{{content.url | prepend: site.baseurl | replace '//', '/'}}">link</a>
+    <!-- <a href="{{content.url | prepend: site.baseurl | replace '//', '/'}}">link</a> -->
 {% endfor %}
 

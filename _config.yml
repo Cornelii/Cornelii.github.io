@@ -11,12 +11,16 @@ github_username:   BlackrockDigital
 facebook_username: StartBootstrap
 
 # Build settings
-markdown:          kramdown
+#markdown:          kramdown
+markdown: redcarpet
 paginate:          5
 paginate_path:     "/posts/page:num/"
 plugins:
   - jekyll-feed
   - jekyll-paginate
+redcarpet:
+  extensions: ["no_intra_emphasis", "tables", "autolink", "strikethrough", "with_toc_data", "fenced_code_blocks"]
+
 
 # collections
 collections_dir: mycollections
