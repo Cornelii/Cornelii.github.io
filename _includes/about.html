@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" aria-label="{{ site.title }}" href="{{ '/' | relative_url }}"><img alt="logo img" class="avatar" src="{{ site.theme_settings.avatar | relative_url }}" height="35"/> {{ site.title }}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+        {% assign name_page = "" %}
+    
+        {% for page in site.pages %}
+            {% unless page.title == null or page.hide or name_page contains page.title %}
+            <li class="nav-item">
+                <a class="nav-link" aria-label="{{ page.title }}" title="{{ page.title }}" href="{{ page.url | relative_url }}">
+                    {% if page.icon %} <i class="fa {{ page.icon }}" aria-hidden="true"></i>
+                    {% else %} {{ page.title }} {% endif%}
+                </a>
+            </li>
+            {% endunless %}
+            {% assign name_page = page.title | append: name_page %}
+        {% endfor %}
+
+        </ul>
+
+    </div>
+</nav>
+
+
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            heyyo
+        </div>
+    </div>
+</div>
