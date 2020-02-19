@@ -1,7 +1,11 @@
 <div class="container">
+    {% for statis in site.statistics %}
     <div class="row">
         <div class="col">
-            yeah
+            <a href="{{statis.url}}">
+            {{ statis.title }}
+            </a>
         </div>
     </div>
+    {% endfor %}
 </div>

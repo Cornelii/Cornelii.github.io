@@ -109,9 +109,10 @@ collections:
   en_posts:
     output: true
     permalink: /:collection/:name
-  drillonbooks:
+  statistics:
     output: true
-    permalink: /:collection/:name
+
+collections_dir: my_collections
 
 # BUILD SETTINGS
 markdown: kramdown
