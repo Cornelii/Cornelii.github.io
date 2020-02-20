@@ -1,0 +1,16 @@
+
+<div class="container">
+    {% for statis in site.statistics %}
+    <div class="row">
+        <div class="card" style="width: 18rem">
+            <a href="{{statis.url}}">
+        <div class="card-body">
+            <h5 class="card-title">{{ statis.title}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted"></h6>
+            <p class="card-text">Something  o</p>
+        </div> 
+        </a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
