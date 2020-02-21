@@ -1,16 +1,17 @@
-
-<div class="container">
-    {% for statis in site.statistics %}
+<div class="container-fluid">
     <div class="row">
-        <div class="card" style="width: 18rem">
+        {% for statis in site.statistics %}
+        <div class="col-sm card_col">
             <a href="{{statis.url}}">
-        <div class="card-body">
-            <h5 class="card-title">{{ statis.title}}</h5>
-            <h6 class="card-subtitle mb-2 text-muted"></h6>
-            <p class="card-text">Something  o</p>
-        </div> 
-        </a>
+                <div class="card basic_card" style="width: 19rem">
+                    <div class="card-body">
+                        <h5 class="card-title">Ch{{statis.chapter}}.{{ statis.title}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ statis.en_title }}</h6>
+                        <p class="card-text">{{ statis.updated }}</p>
+                    </div>
+                </div>
+            </a>
         </div>
+        {% endfor %}
     </div>
-    {% endfor %}
 </div>

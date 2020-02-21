@@ -1,16 +1,17 @@
-
-<div class="container">
-    {% for statis in site.statistics %}
+<div class="container-fluid">
     <div class="row">
-        <div class="card" style="width: 18rem">
-            <a href="{{statis.url}}">
-        <div class="card-body">
-            <h5 class="card-title">{{ statis.title}}</h5>
-            <h6 class="card-subtitle mb-2 text-muted"></h6>
-            <p class="card-text">Something  o</p>
-        </div> 
-        </a>
+        {% for dynamic in site.dynamics %}
+        <div class="col-sm card_col">
+            <a href="{{dynamic.url}}">
+                <div class="card" style="width: 17rem">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ dynamic.title}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ dynamic.en_title }}</h6>
+                        <p class="card-text">{{ dynamic.updated }}</p>
+                    </div>
+                </div>
+            </a>
         </div>
+        {% endfor %}
     </div>
-    {% endfor %}
 </div>
