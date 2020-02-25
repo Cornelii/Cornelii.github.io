@@ -1,4 +1,16 @@
 
+.logo a{
+    text-decoration:none !important;
+    color: inherit;
+}
+
+.subject_link {
+    text-decoration:none !important;
+}
+
+.subject_link:hover{
+    color: lightblue;
+}
 
 .card_col a{
     text-decoration: none !important;
