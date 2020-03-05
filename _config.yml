@@ -111,6 +111,12 @@ collections:
     permalink: /:collection/:name
   statistics:
     output: true
+  ml:
+    output: true
+  rl:
+    output: true
+  dynamics:
+    output: true
 
 collections_dir: my_collections
 
