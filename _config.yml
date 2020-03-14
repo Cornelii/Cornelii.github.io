@@ -101,6 +101,8 @@ authors:
     avatar: "assets/img/avatars/sylhare_avatar.png"
     url: "https://github.com/sylhare"
 
+future: true
+
 # PORTFOLIO
 collections:
   portfolio:
@@ -111,6 +113,7 @@ collections:
     permalink: /:collection/:name
   statistics:
     output: true
+    order: chapter
   ml:
     output: true
   rl:
