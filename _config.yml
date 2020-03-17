@@ -120,6 +120,13 @@ collections:
     output: true
   dynamics:
     output: true
+  web_topics:
+    output: true
+  programming_topics:
+    output: true
+  stock:
+    output: true
+
 
 collections_dir: my_collections
 

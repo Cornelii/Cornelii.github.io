@@ -1,0 +1,17 @@
+<div class="container-fluid">
+    <div class="row">
+        {% for topic in site.web_topics %}
+        <div class="col-sm card_col">
+            <a href="{{topic.url}}">
+                <div class="card" style="width: 17rem">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ topic.title}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ topic.en_title }}</h6>
+                        <p class="card-text">{{ topic.updated }}</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>

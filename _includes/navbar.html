@@ -17,7 +17,7 @@
     
     <!-- Menu -->
     <ul class="hide">
-        {% assign name_page = "" %}
+        {% assign name_page = "Tags|Search" %}
         
         {% for page in site.pages %}
             {% unless page.title == null or page.hide or name_page contains page.title %}
@@ -30,6 +30,17 @@
             </li>
             {% endunless %}
             {% assign name_page = page.title | append: name_page %}
+        {% endfor %}
+        {% for page in site.pages %}
+            {% if page.title == "Tags" or page.title == "Search" %}
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear subject_link" aria-label="{{ page.title }}" title="{{ page.title }}" href="{{ page.url | relative_url }}">
+                    {% if page.icon %} <i class="fa {{ page.icon }}" aria-hidden="true"></i>
+                    {% else %} {{ page.title }} {% endif%}
+                </a>
+            </li>
+            {% endif %}
         {% endfor %}
 
         
