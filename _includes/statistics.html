@@ -2,9 +2,9 @@
     <div class="row">
         {% assign sorted = (site.statistics | sort: 'chapter') %}
         {% for statis in sorted %}
-        <div class="col-sm card_col">
+        <div class="card_col col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
             <a href="{{statis.url}}">
-                <div class="card basic_card" style="width: 19rem">
+                <div class="card basic_card mg-1" style="">
                     <div class="card-body">
                         <h5 class="card-title">Ch{{statis.chapter}}.{{ statis.title}}</h5>
                         <h6 class="card-subtitle mb-2 text-muted">{{ statis.en_title }}</h6>
