@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Web Topics
+title: Web
 subtitle: Sort of things.
 permalink: /web_topics/
 feature-img: "assets/img/pexels/computer.jpeg"

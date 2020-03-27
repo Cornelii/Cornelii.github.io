@@ -1,13 +1,14 @@
+
 <div class="container-fluid">
     <div class="row">
-        {% for topic in site.programming_topics %}
-        <div class="col-sm card_col">
-            <a href="{{topic.url}}">
-                <div class="card" style="width: 17rem">
+        {% assign sorted = (site.programming_topics | sort: 'chapter') %}
+        {% for elem in sorted %}
+        <div class="card_col col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mt-3">
+            <a href="{{elem.url}}">
+                <div class="card basic_card mg-1">
                     <div class="card-body">
-                        <h5 class="card-title">{{ topic.title}}</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">{{ topic.en_title }}</h6>
-                        <p class="card-text">{{ topic.updated }}</p>
+                        <h5 class="card-title">Ch{{elem.chapter}}.{{ elem.title}}</h5>
+                        <p class="card-text">{{ elem.updated }}</p>
                     </div>
                 </div>
             </a>

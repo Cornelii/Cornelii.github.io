@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Programming Topics
+title: Programming
 subtitle: Sort of things.
 permalink: /programming_topics/
 feature-img: "assets/img/pexels/computer.jpeg"
