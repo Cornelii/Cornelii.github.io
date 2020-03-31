@@ -126,6 +126,8 @@ collections:
     output: true
   stock:
     output: true
+  algoDS:
+    output: true
 
 
 collections_dir: my_collections

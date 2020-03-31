@@ -3,7 +3,7 @@ layout: post
 title: "F 분포"
 author-id: "Cornelii. G. Son"
 tags: [study, statistic]
-updated: "2020-04-01"
+updated: "2020-03-24"
 chapter: "3-4"
 en_title: "F Distribution"
 ---

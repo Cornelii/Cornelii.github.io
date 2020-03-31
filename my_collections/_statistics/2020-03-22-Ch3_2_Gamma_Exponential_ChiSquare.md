@@ -3,7 +3,7 @@ layout: post
 title: "감마, 지수, 그리고 카이제곱분포"
 author-id: "Cornelii. G. Son"
 tags: [study, statistic]
-updated: "2020-03-31"
+updated: "2020-03-22"
 chapter: "3-2"
 en_title: "Gamma, Exponential, and Chi-square Distribution"
 ---
@@ -71,7 +71,7 @@ $$ \begin{aligned} \Gamma(\alpha) = \int^\infty_0(\frac{y^2}{2})^{\alpha-1}e^{-y
 <br/><br/>
 이렇게 됩니다. 이제 
 $$ \alpha $$
-에 1을 넣으면,
+에 0.5를 넣으면,
 <br/><br/>
 $$ \begin{aligned} \Gamma(1/2) = \sqrt{2}\int^\infty_0e^{-y^2/2} dy = \frac{2\sqrt{\pi}}{\sqrt{2\pi}}\int^\infty_0e^{-y^2/2} dy = 2\sqrt{\pi} \times \frac{1}{\sqrt{2\pi}}\int^\infty_0e^{-y^2/2} dy
 \end{aligned} $$
@@ -122,12 +122,14 @@ $$ \alpha, \beta $$
 
 #### 감마분포의 기댓값과 분산
 
+
+
 #### 감마분포의 적률생성함수
 
 ## 지수분포
 지수분포는 감마분포에서 간단히
 $$ \alpha = 1$$
-을 대입하므로 얻을 수 있고 아래와 같습니다.
+을 대입해서 얻을 수 있고 아래와 같습니다.
 <br/><br/>
 $$ \begin{aligned} \frac{1}{\beta}e^{-x/\beta} \end{aligned} $$
 <br/><br/>

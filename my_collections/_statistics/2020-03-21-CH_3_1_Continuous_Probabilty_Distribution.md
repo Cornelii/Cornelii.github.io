@@ -3,13 +3,13 @@ layout: post
 title: "연속확률분포 균일분포와 정규분포"
 author-id: "Cornelii. G. Son"
 tags: [study, statistic]
-updated: "2020-03-30"
+updated: "2020-03-21"
 chapter: "3-1"
 en_title: "Continuous Probability Distribution: Uniform & Normal Distribution"
 ---
 
 ## 연속확률분포
-연속확률분포는 확률변수를 특정한 길이의 직선 내의 무수한 점에 대응 시킬 수 있는 실수인 확률변수로 나타낸 확률분포입니다.
+연속확률분포는 확률변수를 특정한 길이의 직선 내의 무수한 점에 대응 시킬 수 있는 실수로 나타낸 확률분포입니다.
 <br/><br/>
 중요한 것은 연속확률분포 값 자체가 확률을 의미하지는 않는다는 것입니다.
 <br/><br/>
@@ -42,7 +42,11 @@ $$ \begin{aligned} M_X(t) = \int^B_Ae^{xt}\frac{1}{B-A} dx= \frac{1}{t(B-A)}(e^{
 <br/>
 가장 중요한 분포를 하나 꼽으라면 당연히 정규분포 (Normal Distribution or Gaussian Distribution)일 것입니다.
 <br/><br/>
-좌우 대칭의 종모양을 가지고 있고, 평균과 분산에 의에 모양이 결정됩니다. 식의 형태는 아래와 같습니다.
+좌우 대칭의 종모양을 가지고 있고, 평균과 분산에 의해 모양이 결정됩니다. 
+<br/><br/>
+재미있게도, 평균과 분산이 식에 적나라하게 드러나있죠.
+<br/><br/>
+식의 형태는 아래와 같습니다.
 <br/><br/>
 $$ \begin{aligned} n(x;\mu, \sigma) = \frac{1}{\sqrt{2\pi}\sigma}exp({-\frac{(x-\mu)^2}{2\sigma^2}}) \space  \end{aligned} $$
 <br/><br/>
@@ -50,7 +54,7 @@ $$ -\infty < x < \infty $$
 <br/><br/>
 평균과 분산은 계산해보면, 당연히
 $$\mu, \sigma^2$$
-가 나오게 되겠지요.
+가 나오게 됩니다.
 <br/><br/>
 
 #### 정규분포의 적률생성함수
@@ -127,11 +131,11 @@ $$ Z = aX + b$$
 <br/><br/>
 여기서 a와 b는 상수입니다.
 <br/><br/>
-확률분포의 변화 기억나시나요? 여기서 핵심은 확률이 같다는거!
+확률분포의 변화 기억나시나요? 여기서 핵심은 확률이 같다는거! 식은 1대1 대응이 만족하기 때문에 아래의 관계가 성립합니다.
 <br/><br/>
 $$ n(x)dx = g(z)dz  $$
 <br/><br/>
-$$ g(z) = n(x)\frac{dx}{dz} $$
+$$ g(z) = n(x)|\frac{dx}{dz}| $$
 <br/><br/>
 $$ \begin{aligned} g(z) &= \frac{1}{\sqrt{2\pi}\sigma}exp({-\frac{(x-\mu)^2}{2\sigma^2}})\frac{1}{a} \\ \\
 &= \frac{1}{\sqrt{2\pi}\sigma}exp({-\frac{(\frac{z-b}{a}-\mu)^2}{2\sigma^2}})\frac{1}{a} \\ \\
@@ -152,12 +156,15 @@ $$ \begin{aligned} a = \frac{1}{\sigma}, \space b = -\frac{\mu}{\sigma} \end{ali
 <br/><br/>
 $$ \begin{aligned} Z = aX + b = \frac{X-\mu}{\sigma} \end{aligned} $$
 <br/><br/>
-이런 확률변수의 변환을 통해 표준 정규분포를 얻어 낼 수 있네요.
+$$ \mu, \sigma^2$$
+의 정규분포를 따르는 확률변수에 대해
+<br/>
+위와 같은 식으로 표준 정규분포를 얻어 낼 수 있네요.
 <br/><br/>
 
 #### 표준정규분포의 적률생성함수
 <br/>
-위에서 구한 식에 평균에 0, 분산에 1을 대입해 쉽게 구해낼 수 있습니다.
+위에서 구한 정규분포의 적률생성함수 식에 평균에 0, 분산에 1을 대입해 쉽게 구해낼 수 있습니다.
 <br/><br/>
 
 $$ \begin{aligned} exp(\mu t+ \frac{\sigma^2t^2}{2}) = exp(\frac{t^2}{2})  \end{aligned} $$
