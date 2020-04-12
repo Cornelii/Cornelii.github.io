@@ -83,7 +83,7 @@ $$ 1-\beta $$
 <br/><br/>
 유의수준이 귀무가설을 기각할 `확률`(귀무가설 확률분포에서 벗어나려는 확률)이기에 p-value도 당연히 `확률` 값입니다.
 
-<img alt="그림3"/>
+<img src="/assets/img/statistics/04/4_1_3.png" alt="Null Hypothesis" width="500"/>
 
 
 
