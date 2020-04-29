@@ -112,3 +112,22 @@ $$\begin{aligned} F = \frac{\frac{(n_1-1)S_1^2}{\sigma_1^2 (n_1-1)}}{\frac{(n_2-
 $$ n_1-1, n_2-1$$
 로 표현된 F-분포를 따르게 될 것입니다.
 <br/><br/>
+<br/><br/>
+
+
+## F분포 in python
+
+```python
+import scipy.stats as sps
+
+## F distribution
+dfn, dfd = 11,9 ## degree of freedom of nominator and denominator, respectively.
+
+f = sps.f(dfn, dfd, loc=0, scale=1)
+
+#### mean & Variance
+mean, var = f.mean(), f.var()
+
+#### get some values from F-distribution
+some_values = f.rvs(size=10, random_state=12345)
+```

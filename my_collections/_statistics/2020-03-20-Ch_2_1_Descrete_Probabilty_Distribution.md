@@ -107,12 +107,33 @@ $$ \begin{aligned} M_X(t) = \sum_{k=0}^n e^{kt} \binom{n}{k}p^k(1-p)^{n-k} \end{
 <br/><br/>
 $$ \begin{aligned} \sum_{k=0}^n \binom{n}{k}p^k(1-p)^{n-k} = (p + 1-p )^n  = 1 \end{aligned} $$
 <br/><br/>
-적률생성함수는
-$$ p^k $$
-가 포함된 항에
-$$ e^{kt} $$
-를 곱한 형태가 되는군요. 일단 이정도만 하고 넘어가도록 하지요.
-<br/><br/>
 <br/><br/>
 
+## 균일분포 & 이항분포 in Python
 
+```python
+import scipy.stats as sps
+
+## 균일분포
+disc_uniform = sps.randint(low = 1, high = 10)
+
+## expectation, variance
+mean, var = disc_uniform.mean(), disc_uniform.var()
+print(f"Discrete Uniform Distribution's expectation : {mean}, variance : {var}")
+
+## get some values from discrete uniform distribution
+disc_uniform_values = disc_uniform.rvs(size=10, random_state=12345)
+
+
+
+## 이항분포
+binorm = sps.binom(10,0.2) # binom(n,p)
+
+## expectation, variance
+mean, var = binorm.mean(), binorm.var()
+print(f"binormial distribution's expectation : {mean}, variance : {var}")
+
+## get some values from binormial distribution
+binom_values = binom.rsv(size=10, random_state=12345)
+
+```

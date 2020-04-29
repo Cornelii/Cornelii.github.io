@@ -171,4 +171,30 @@ $$ \begin{aligned} exp(\mu t+ \frac{\sigma^2t^2}{2}) = exp(\frac{t^2}{2})  \end{
 <br/><br/>
 
 
+## 균일분포 & 정규분포 in Python
 
+```python
+import scipy.stats as sps
+
+## 균일분포
+uniform = sps.uniform()   ## between 0 and 1
+uniform2 = sps.uniform(loc=8, scale=2) ## between loc and loc+scale
+
+## expectation, variavnce
+mean, var = uniform2.mean(), uniform2.var()
+
+## get some values form uniform distribution
+some_values = uniform2.rvs(size=10, random_state=12345)
+
+
+## 정규분포
+norm = sps.norm() ## standard normal distribution with 0, 1 as mean and standard deviation repectively.
+norm2 = sps.norm(loc=10, scale=2) ## normal distribution with loc, scale as mean and standard deviation repectively.
+
+## expectation, variance
+mean, var = norm.mean(), norm.var()
+
+## get some values from standard normal distribution
+some_values = norm.rvs(size=[8,4], random_state=12345)
+
+```

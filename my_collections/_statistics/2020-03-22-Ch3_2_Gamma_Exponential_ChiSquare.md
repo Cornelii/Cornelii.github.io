@@ -449,4 +449,47 @@ $$ \begin{aligned} \frac{(n-1)S^2}{\sigma^2} \end{aligned}  $$
 <br/><br/>
 <br/><br/>
 
+
+## 감마, 지수, 카이제곱 분포 in Python
+
+```python
+import scipy.sps as sps
+import numpy as np
+
+## Gamma Distribution
+alpha = 3, beta = 2
+gamma = sps.gamma(a=alpha, scale=beta, loc=0)
+
+#### Expectation & Variance
+mean, var = gamma.mean(), gamma.var()
+
+#### get some values from Gamma
+some_values = gamma.rvs(size=10, random_state=12345)
+
+
+## Exponential Distribution
+beta = 3
+expn = sps.expon(scale=beta)
+
+#### Expectation & Variance
+mean, var = expn.mean(), expn.var()
+
+#### get some values from Exponential Distribution
+some_values = expn.rvs(size=10, random_state=12345)
+
+
+## Chi-square Distribution
+df = 40
+chi2 = sps.chi2(df, loc=0, scale=1)
+
+
+#### Expectation & Variance
+mean, var = chi2.mean(), chi2.var()
+
+#### get some values from chi-squared distribution
+some_values = chi2.rvs(size=10, random_state=12345)
+
+```
+
+
 통계검정을 위한 재료들이 하나씩 모이고 있네요. 냠냠..
