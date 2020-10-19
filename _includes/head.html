@@ -31,6 +31,10 @@
 
     <!-- KaTeX 0.8.3 -->
     <!-- if you have any issue check https://github.com/KaTeX/KaTeX -->
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
     {% if site.theme_settings.katex %}
     <script src="{{ '/assets/js/vendor/katex.min.js' | relative_url }}"></script>
     {% endif %}
@@ -53,4 +57,7 @@
     <title>{% if page.title %}{{ page.title }} |{% endif %} {{ site.title }}</title>
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.theme_settings.description }}{% endif %}">
     -->
+    {% if page.use_math %}
+      {% include mathjax_support.html %}
+    {% endif %}
 </head>
