@@ -107,9 +107,32 @@ $$ \begin{aligned} H_1 : \mu \ne \mu_0 \end{aligned}$$
 <br/><br/>
 t-분포에 대해서 간단히 살펴보고 넘어갑시다.
 <br/><br/>
+$$ \begin{aligned} t = \frac{\overline{X} - \mu}{S/\sqrt{n}} \end{aligned}$$
+<br/><br/>
+위와 같은 확률 변수를 가지면서,
+<br/><br/>
+$$ \begin{aligned} g(t)
+&= \frac{\Gamma((\nu+1)2)}{\sqrt{\pi\nu}\Gamma(\nu/2)}(1+\frac{t^2}{\nu})^{-(\nu+1)/2}
+\end{aligned}$$
+<br/><br/>
+그리고 자유도가 
+$$ \nu \space \space (\nu = n - 1 )$$ 
+일때, 위의 확률분포를 따르게 됩니다.
 <br/><br/>
 <br/><br/>
 
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
 <br/><br/>
 <br/><br/>
 
