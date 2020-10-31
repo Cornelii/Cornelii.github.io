@@ -32,12 +32,17 @@ n-1 번 Hello!를 출력한 상태(X)에서 n 번 Hello!를 출력한 상태로(
 이런 함수죠. 
 $$ \begin{aligned} \tilde{f} = \tilde{X} \rightarrow X \rightarrow Y \rightarrow \tilde{Y}  \end{aligned}$$
 <br/><br/>
+<img src="/assets/img/programming/01/deco_scheme.png" alt="Decorator_Scheme" width="1000"/>
+<br/><br/>
+<br/><br/>
 그렇다면, 데코레이터 d는  
 $$ \begin{aligned} d : f \rightarrow \tilde{f}  \end{aligned}$$ 
 <br/><br/>
 $$ \begin{aligned} d(f) = \tilde{f} \end{aligned} $$
 <br/><br/>
-가 되는 것입니다.
+라고 말할 수 있습니다.
+<br/><br/>
+함수 앞 뒤에 다른 기능을 부과한 함수로 바꿔 반환해 주는 함수!
 <br/><br/>
 소스의 형태로 바꿔볼까요?
 <br/><br/>
@@ -47,7 +52,7 @@ $$ \begin{aligned} d(f) = \tilde{f} \end{aligned} $$
 def decorator_fcn(f):
     def f_tilde(X_tilde):
         X = g(X_tilde)
-        Y = f(X)
+        Y = f(X)  # 기존 함수의 기능
         Y_tilde = h(Y)
         return Y_tilde
     return f_tilde
@@ -59,7 +64,7 @@ def decorator_fcn(f):
 
 ```python
 def decorator1(fcn):
-    def wrapper(*arg, **kwargs):
+    def wrapper(*arg, **kwargs): # 이름이 꼭 wrapper일 필요 없습니다.
         # 함수 실행 이전 동작
         print("Hello World!")
         
@@ -209,7 +214,7 @@ some_fcn2("Decorator order test2")
 <br/><br/>
 그 함수를 호출하는 모든 부분을 고쳐야 되는 경우가 생길 수 있습니다.
 <br/><br/>
-그러나, 데코레이터가 출동한다면? 데! 코! 레! 이! 터! (어떤 세대인지 너무 들어났나요.)
+그러나, 데코레이터가 출동한다면? 데! 코! 레! 이! 터!?
 <br/><br/>
 데코레이터를 선언하고, 각 함수의 선언부에 `@`를 통해 함수를 바꿔줌으로써, 
 <br/><br/>

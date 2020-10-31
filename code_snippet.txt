@@ -1,0 +1,28 @@
+<br/><br>
+<select id="code1" onChange="changeCode(1);">
+    <option value="python">python</option>
+    <option value="c">c</option>
+    <option value="cpp">c++</option>
+    <option value="java">java</option>
+</select>
+<div markdown="1" id="code1_python">
+```python
+
+```
+</div>
+<div markdown="1" id="code1_c" style="display:none">
+```c
+
+
+```
+</div>
+<div markdown="1" id="code1_cpp" style="display:none" >
+```cpp
+
+```
+</div>
+<div markdown="1" id="code1_java" style="display:none" >
+```java
+
+```
+</div>

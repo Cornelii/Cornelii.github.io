@@ -2,7 +2,7 @@
 layout: post
 title: "표본평균과 기댓값과 분산"
 author-id: "Cornelii. G. Son"
-tags: [study, statistic]
+tags: [study, statistics]
 updated: "2020-03-21"
 chapter: "1-6"
 en_title: "Sample Mean & Sample Variance"

@@ -2,7 +2,7 @@
 layout: post
 title: "가설검정"
 author-id: "Cornelii. G. Son"
-tags: [study, statistic]
+tags: [study, statistics]
 updated: "2020-03-25"
 chapter: "4-1"
 en_title: "Hypothetical Test"

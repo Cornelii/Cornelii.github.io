@@ -2,7 +2,7 @@
 layout: post
 title: "평균와 분산, 그리고 확률변수의 선형 결합"
 author-id: "Cornelii. G. Son"
-tags: [study, statistic]
+tags: [study, statistics]
 updated: "2020-02-29"
 chapter: "1-4"
 en_title: "Expectation, Variance, and Linear Combination of Random Variable"

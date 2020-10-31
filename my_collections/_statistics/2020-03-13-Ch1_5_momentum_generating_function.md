@@ -2,7 +2,7 @@
 layout: post
 title: "확률변수의 변환과 적률생성 함수"
 author-id: "Cornelii. G. Son"
-tags: [study, statistic]
+tags: [study, statistics]
 updated: "2020-03-13"
 chapter: "1-5"
 en_title: "Transformation of Random Variables & Moment Generating function"

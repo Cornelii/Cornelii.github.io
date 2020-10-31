@@ -2,7 +2,7 @@
 layout: post
 title: "단일 모평균의 추정 및 검정"
 author-id: "Cornelii. G. Son"
-tags: [study, statistic]
+tags: [study, statistics]
 updated: "2020-05-25"
 chapter: "4-2"
 en_title: "Estimation & Hypothetical Test for a single population mean"
@@ -63,9 +63,8 @@ $$ \begin{aligned} Z = \frac{\bar{X} - \mu}{\sigma/ \sqrt{n}}\end{aligned} $$
 <br/><br/>
 이제 그 추정량이 어떤 확률분포를 가지는가를 알아냈으니, 범위에 따른 확률을 당연히 이 확률분포에 대입해 구할 수 있겠죠. 밑의 예처럼 말이죠.
 
-<img1/>
-<img2/>
-<img3/>
+<img src="/assets/img/statistics/04/4_2_5.png" alt="Confidence Interval" width="1100"/>
+
 표본평균 자체가 불편 추정량임으로 일반적으로 표본평균값을 중심으로 대칭인 형태의 구간으로 확률을 구하게 되며, 똑같은 말을 반대로 하면, 확률을 정하면 => 구간을 정할 수 있게 되는거죠.
 
 이것이 `신뢰 구간`입니다.
@@ -87,14 +86,13 @@ $$ \begin{aligned} H_0 : \mu = \mu_0 \end{aligned}$$
 $$ \begin{aligned} H_1 : \mu \ne \mu_0 \end{aligned}$$
 가 될 것입니다.
 <br/><br/>
-이제 표본으로부터 표본평균을 구한 값(표본평균이 모평균의 불편추정량을 구하는 확률변수이기 때문입니다.)을 `검정 통계량`이라고 하며, 가정한 확률분포에서 표본으로부터 검정통계량이 나올 확률을 구함으로써 가설이 타당한지를 판단하게 됩니다.
+이제 표본으로부터 표본평균을 구한 값(표본평균이 모평균의 불편추정량을 구하는 확률변수이기 때문입니다.)을 `검정 통계량`이라고 하며, 가정한 확률분포에서 표본으로부터 구한 검정통계량과 기각역을 비교하게 됩니다.
 <br/><br/>
 
-<img1/>
-<img2/>
-<img3/>
+<img src="/assets/img/statistics/04/4_2_4.png" alt="Test scheme" width="1100" />
 
 <br/><br/>
+위와 같은 가정을 통해, 기각역에 검정통계량이 있으면 `귀무가설을 기각한다.` 그리고, 기각역에 속하지 않으면 `귀무가설을 기각 할 수 없다.` 라고 말할 수 있게 되는 것이죠.
 <br/><br/>
 
 ## 모분산을 모르고 있을 때 단일 모평균의 추정 및 검정
@@ -117,21 +115,13 @@ $$ \begin{aligned} g(t)
 <br/><br/>
 그리고 자유도가 
 $$ \nu \space \space (\nu = n - 1 )$$ 
-일때, 위의 확률분포를 따르게 됩니다.
+인 확률분포를 따르게 됩니다.
+<br/><br/> 
+t 분포는 표본의 수 n가 커질 수록, 조금씩 정규분포에 가까워지는 형태를 가지고 있습니다.
 <br/><br/>
+왜 모분산을 모를 때, t-분포를 사용하는 것일까요?! 그 이유는, 당연하게도 모분산이 아닌 표본분산을 가지고 유도한 확률분포가 t-분포 이기 때문입니다.
 <br/><br/>
-
-<br/><br/>
-<br/><br/>
-<br/><br/>
-<br/><br/>
-<br/><br/>
-<br/><br/>
-<br/><br/>
-<br/><br/>
-<br/><br/>
-<br/><br/>
-<br/><br/>
+신뢰구간의 추정 및 검정 방법은 귀무가설의 확률분포가 다르다는 것만 빼면, 모분산을 알아 정규분포를 사용한 경우와 동일합니다.
 <br/><br/>
 <br/><br/>
 <br/><br/>

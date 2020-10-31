@@ -2,7 +2,7 @@
 layout: post
 title: "베이즈 정리"
 author-id: "Cornelii. G. Son"
-tags: [study, statistic]
+tags: [study, statistics]
 updated: "2020-02-29"
 chapter: "1-3"
 en_title: "Bayes Theorem"
