@@ -5,6 +5,7 @@ author-id: "Cornelii. G. Son"
 tags: [study, statistics]
 updated: "2020-02-22"
 chapter: "1-2"
+comments: true
 en_title: "conditional probability, Disjoint, Independent "
 ---
 

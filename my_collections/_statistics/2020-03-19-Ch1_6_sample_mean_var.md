@@ -5,6 +5,7 @@ author-id: "Cornelii. G. Son"
 tags: [study, statistics]
 updated: "2020-03-21"
 chapter: "1-6"
+comments: true
 en_title: "Sample Mean & Sample Variance"
 ---
 

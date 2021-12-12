@@ -5,6 +5,7 @@ author-id: "Cornelii. G. Son"
 tags: [study, statistics]
 updated: "2020-03-22"
 chapter: "3-2"
+comment: true
 en_title: "Gamma, Exponential, and Chi-square Distribution"
 ---
 

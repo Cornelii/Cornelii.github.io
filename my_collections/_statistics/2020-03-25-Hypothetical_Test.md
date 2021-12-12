@@ -5,6 +5,7 @@ author-id: "Cornelii. G. Son"
 tags: [study, statistics]
 updated: "2020-03-25"
 chapter: "4-1"
+comments: true
 en_title: "Hypothetical Test"
 ---
 

@@ -5,6 +5,7 @@ author-id: "Cornelii. G. Son"
 tags: [study, statistics]
 updated: "2020-03-24"
 chapter: "3-4"
+comments: true
 en_title: "F Distribution"
 ---
 

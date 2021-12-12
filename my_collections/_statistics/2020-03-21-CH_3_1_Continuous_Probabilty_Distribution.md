@@ -5,6 +5,7 @@ author-id: "Cornelii. G. Son"
 tags: [study, statistics]
 updated: "2020-03-21"
 chapter: "3-1"
+comment: true
 en_title: "Continuous Probability Distribution: Uniform & Normal Distribution"
 ---
 

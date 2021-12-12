@@ -5,6 +5,7 @@ author-id: "Cornelii. G. Son"
 tags: [study, statistics]
 updated: "2020-05-25"
 chapter: "4-2"
+comments: true
 en_title: "Estimation & Hypothetical Test for a single population mean"
 ---
 

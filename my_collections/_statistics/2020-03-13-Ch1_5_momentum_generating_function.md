@@ -5,6 +5,7 @@ author-id: "Cornelii. G. Son"
 tags: [study, statistics]
 updated: "2020-03-13"
 chapter: "1-5"
+comments: true
 en_title: "Transformation of Random Variables & Moment Generating function"
 ---
 

@@ -5,6 +5,7 @@ author-id: "Cornelii. G. Son"
 tags: [study, statistics]
 updated: "2020-03-20"
 chapter: "2-1"
+comments: true
 en_title: "Descrete Probability Distribution: Uniform & Binary Distribution"
 ---
 

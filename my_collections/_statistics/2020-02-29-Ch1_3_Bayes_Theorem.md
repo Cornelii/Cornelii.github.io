@@ -5,6 +5,7 @@ author-id: "Cornelii. G. Son"
 tags: [study, statistics]
 updated: "2020-02-29"
 chapter: "1-3"
+comments: true
 en_title: "Bayes Theorem"
 ---
 
