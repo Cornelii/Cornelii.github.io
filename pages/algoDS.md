@@ -1,6 +1,6 @@
 ---
 layout: page
-title: DS&Algo
+title: DS&Algorithm
 subtitle: Data Structures & Algorithms.
 permalink: /algoDS/
 feature-img: "assets/img/pexels/computer.jpeg"

@@ -116,15 +116,11 @@ collections:
     order: chapter
   ml:
     output: true
-  rl:
+  linux:
     output: true
   dynamics:
     output: true
-  web_topics:
-    output: true
-  programming_topics:
-    output: true
-  stock:
+  oracle:
     output: true
   algoDS:
     output: true

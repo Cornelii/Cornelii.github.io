@@ -1,7 +1,7 @@
 
 <div class="container-fluid">
     <div class="row">
-        {% assign sorted = (site.programming_topics | sort: 'chapter') %}
+        {% assign sorted = (site.linux | sort: 'chapter') %}
         {% for elem in sorted %}
         <div class="card_col col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mt-3">
             <a href="{{elem.url}}">
