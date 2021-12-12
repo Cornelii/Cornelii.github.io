@@ -3,7 +3,7 @@ layout: post
 title: "Python 데코레이터"
 author-id: "Cornelii. G. Son"
 tags: [code, python]
-comment: true
+comments: true
 mathjax: true
 ---
 

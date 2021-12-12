@@ -2,7 +2,7 @@
 layout: post
 title: "Python 클로져"
 author-id: "Cornelii. G. Son"
-comment: true
+comments: true
 tags: [code, python]
 ---
 

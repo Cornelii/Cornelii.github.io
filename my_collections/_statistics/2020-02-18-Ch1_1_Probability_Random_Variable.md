@@ -5,6 +5,7 @@ author-id: "Cornelii. G. Son"
 tags: [study, statistics]
 updated: "2020-02-22"
 chapter: "1-1"
+comments: true
 en_title: "probability & random variables"
 ---
 
