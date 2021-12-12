@@ -11,6 +11,8 @@ defaults:
     values:
       image: assets/img/cgs.png # seo tag
 
+disqus_shortname: cornelii_gitpage
+
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
   # Meta
