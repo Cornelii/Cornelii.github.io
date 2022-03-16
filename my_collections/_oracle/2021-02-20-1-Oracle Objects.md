@@ -7,6 +7,7 @@ updated: "2020-03-01"
 comments: true
 chapter: "1"
 en_title: "Summary sql of oracledb"
+hide_chapter: true
 ---
 
 ## SQL (Structured Query Language)

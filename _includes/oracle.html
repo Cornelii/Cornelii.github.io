@@ -7,7 +7,11 @@
             <a href="{{elem.url}}">
                 <div class="card basic_card mg-1">
                     <div class="card-body">
-                        <h5 class="card-title">Ch{{elem.chapter}}.{{ elem.title}}</h5>
+                        {% if elem.hide_chapter %}
+                            <h5 class="card-title">{{ elem.title}}</h5>
+                        {% else %}
+                            <h5 class="card-title">Ch{{elem.chapter}}.{{ elem.title}}</h5>
+                        {% endif %}
                         <p class="card-text">{{ elem.updated }}</p>
                     </div>
                 </div>
