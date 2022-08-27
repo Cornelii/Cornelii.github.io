@@ -4,182 +4,224 @@ title: "Navier-Stokes Equations"
 author-id: "Cornelii. G. Son"
 comments: true
 tags: [Fluid Dynamics]
+chapter: "1-1"
 ---
 
-#### - Navier-Stokes Equations?
+----
+<br/>
+<br/>
 
-- 일반적으로 비압축 유체의 지배방정식을 얘기하며, 비선형 미분방정식이다. 실해를 얻어내기에는 굉장히 한정적이며, FVM 등의 방법을 활용하여 근사해를 구하고, 실제 유체를 굉장히 정밀하게 해석하는 것으로 유명하다. 밀레니엄 문제 중 하나에 포함되어 있다.
+#### Navier-Stokes Equations?
+----
+유체의 지배방정식이며, 비선형 미분방정식입니다. 
 
-<br>
-##### -스코프
+실해를 얻어내기에는 굉장히 한정적이며, FVM 등의 방법을 활용하여 근사해를 구합니다만 실제 유체를 굉장히 정밀하게 해석하는 것으로 알려져 있습니다. 
 
-- 스코프, 즉 범위를 4개로 나눌 수 있다.
-  1. 현재 함수의 스코프
-  2. 현재 함수를 감싸고 있는 스코프
-  3. 전역 스코프
-  4. 내장 스코프
+또한, 밀레니엄 문제 중 하나에 포함되어 있는 것으로 유명합니다.
 
-##### - 일급 객체 함수
-- 일급객체 함수란?!
-  1.  변수에 할당할 수 있고,
-  2. 다른 함수의 인자로 전달할 수 있고,
-  3. 표현식에서 사용될 수 있는 함수.
+<br/>
+<br/>
 
-<br>
-파이썬은 일급객체함수를 지원한다. 일급객체는 아래와 같이 크게 3가지 특성을 가진다고 정의할 수 있다. 
+#### Reynolds Transport Theorem (레이놀즈 전달 정리)
+----
+Reynolds Transport Theorem을 다루지 않고, "유체" 에 대한 식을 전개할 수 없습니다. 
+말그대로 유체는 흐르는 것이기 때문입니다. 
+이 흐름의 수학적 표현이 바로 Reynolds Transport Theorem입니다.
 
+$$ B_{sys} $$ 를 어떠한 **유체**의 성질이라고 한다면, 
 
-```python
-def func1():
-    print('1st-class function')
-    
-a = func1 # 변수에 할당할 수 있고,
+$$ \begin{aligned} \frac{dB_{sys}}{dt} = \frac{\partial}{\partial{t}}\int_{CV} \beta \rho dV + \int_{CS} \beta \rho (v \cdot n )dA
 
-print(func1) # 다른 함수의 인자로 전달할 수 있고,
+\end{aligned} $$
 
-if func1:
-    print('expressive') 
-    # 표현식으로 쓰일 수 있다. 
-    # (return 될 수 있고, if문 등에 쓰일 수 있다.)
-```
+where, $$ CV: Control Volume, CS: Control Surface, \\
+B_{sys} = \int_{CV} \beta \rho dV \\
+\rho: density
+ $$
+<br/>
 
-<br>
-일급객체함수가 어떤 것인지를 이해했다면, 이제 클로져를 살펴보자.<br>
-밑의 함수를 보면,
+오른쪽 변의 2번째 항의 $$ v $$는 Control Surface 표면에서의 속도벡터입니다. $$ n $$은 표면 면적에 수직한 법선벡터입니다.  
 
-```python
-def outer_func(a, b, *args, **kwargs):
-    def inner_func(x):
-        result = []
-        for val in x:
-            result.append((val+a)*b)
-        return result
-    return inner_func
-```
+<span style="color:red">**여기서 유의해야 할 것이 이렇게 표현하면 나가는 방향이 +, 들어오는 방향이 - 라는 것입니다.**</span>  
+  
+왜 나가는데 +를 해줘야 하고, 들어오는 것을 -로 해주어야 할까요?  
 
-`outer_func` 함수안의 스코프에 정의된 `inner_func`함수를 일급객체로서 리턴하고 있다. 
-<br>또한,
+이것을 이해하는게 상당히 중요한데, 관심이 있는 것은 $$ B_{sys} $$이지
+CV안의 물성 $$ B_{CV} $$ 가 아닙니다!  
+
+특정 시점(point)에 (CV를 구성한 시점) $$ B_{sys} = B_{CV} $$ 이지만, 문제는 유체라서 흐르는 것이죠. 
+
+<span style="color:blue">
+**CV 안에 있었던, 하지만 $$ B_{sys} $$ 에 속해 있던 그 물성이 방금 나갔으니 그것을 더해주어야 하는 것이고,**</span>  
+
+<span style="color:blue">
+**CV 밖에 있었던, 하지만 $$ B_{sys} $$ 에 속하지 않았던 들어온 친구를 빼주어야 하는 것입니다.**</span>  
 
 
+마지막으로 식을 조금 변형해서 $$ dA $$ 면적을 법선벡터를 포함된 값으로 보면 $$ dA = \lvert {dA} \rvert \vec{n} $$ 아래 처럼도 쓸 수 있을 것입니다. 
 
-해당 `inner_func`함수는 `outer_func`에서 전달 받은 인자 `a`와 `b`를 사용하고 있다.
+$$ \begin{aligned} \frac{dB_{sys}}{dt} = \frac{\partial}{\partial{t}}\int_{CV} \beta \rho dV + \int_{CS} \beta \rho v \cdot dA
 
-그렇다면, <span style="color:blue;">여기서 가질 수 있는 한 가지 궁금증이 있다면!</span>
-
-<span style="color:red;">a와 b는  `outer_func`가 끝나면, 즉 `outer_func` 스코프 안에서만 역할하는 변수일텐데? 그 a와 b를 안에 품고, 리턴된 `inner_func`에서는 어떻게 될까?!!!</span>
-
-**이 궁금증에 대한 답이 바로 클로져이다!**
+\end{aligned} $$
 
 
-<br>
-이어서 밑의 예제를 보면,
+<br/>
+<br/>
 
-```python
-myfunc1 = outer_func(2,10)
+#### Continuity Equation (연속방정식) 
+----
+연속방정식은 유체역학의 구성방정식. 쉽게 말해 만족해야만 하는 제한 조건과 같은 식입니다. 질량 보존의 법칙이기 때문에 거의 모든 상황에서 만족하는 것이 당연할 것입니다.  
 
-print(myfunc1)
-# <function outer_func.<locals>.inner_func at 0x~~~~~~~~ >
-print(myfunc1([1,2,3,4,5]))
-# [30, 40, 50, 60, 70]
-```
+$$ \begin{aligned} \frac{d m_{sys}}{dt} &= \frac{\partial}{\partial{t}} \int_{CV} \rho dV + \int_{CS} \rho v \cdot dA = 0
+\end{aligned} $$  
 
-`a` 로 2를, `b`로 10을 넘겨주었다.  `myfunc1`는 잘 작동을 한다???! 왜?!
+<br/>
 
-넘겨주었던, 2와 10을 찾아보면,
+###### - Cartesian Fixed Control Volume
+----
 
-```python
-print(myfunc1.__closure__[0].cell_contents)
-# 2
-print(myfunc1.__closure__[1].cell_contents)
-# 10
-```
+velocity field
+$$
+  v = u\vec{i} + \nu\vec{j} + w\vec{k}  
+$$ 
 
-해당 함수의 `__closure__` 의 리스트에서 `cell_contents`로 접근할 수 있다.
+$$ \begin{aligned} \frac{\partial{\rho}}{\partial{t}}dxdydz + dxdydz(\frac{\partial{\rho u}}{\partial{x}} + \frac{\partial{\rho \nu}}{\partial{y}} + \frac{\partial{\rho w}}{\partial{z}}) = 0
+\end{aligned} $$
 
 
+$$ \begin{aligned} \frac{\partial{\rho}}{\partial{t}} + (\frac{\partial{\rho u}}{\partial{x}} + \frac{\partial{\rho v}}{\partial{y}} + \frac{\partial{\rho w}}{\partial{z}}) = 0
+\end{aligned} $$  
 
-이 처럼, 참조된 변수와 함께 바인딩 되어 있는 함수를 **클로져**라 한다.
+<br/>
+Incompressible Flow (비압축 유체) 에서는 ( $$ \rho: constant, \frac{\partial{\rho}}{\partial{x^i}} = 0, \frac{\partial{\rho}}{\partial{t}} = 0 $$ )
 
-(다시 기억해보자, 일급객체함수도 변수가 될 수 있다. 이 말은?! 함수자체도 함께 바인딩 될 수 있다.)
-<br><br><br><br>
+$$ \begin{aligned} \frac{\partial{u}}{\partial{x}} + \frac{\partial{\nu}}{\partial{y}} + \frac{\partial{w}}{\partial{z}} = 0
+\end{aligned} $$  
 
+<br/>
 
+Steady-State (정상 상태) 에서는 ( $$ \frac{\partial}{\partial{t}} = 0 $$ )
 
+$$ \begin{aligned} \frac{\partial{\rho u}}{\partial{x}} + \frac{\partial{\rho \nu}}{\partial{y}} + \frac{\partial{\rho w}}{\partial{z}} = 0
+\end{aligned} $$  
 
-조금 더 생각해보자~
+<br/>
 
-클로져는
+###### - Reynolds Transport Theorem with Gauss's Divergence Theorem  
+----
+(fixed Control Volume)
 
-마치, 함수가 상태를 가지고 있는 것 같다.
+$$ \begin{aligned} \frac{d m_{sys}}{dt} &= \frac{\partial}{\partial{t}} \int_{CV} \rho dV + \int_{CS} \rho v \cdot dA = 0
+\end{aligned} $$  
 
+좌측의 두번째 항에 대해 Gauss's Divergence Theorem 에 의해서,
 
+$$ \begin{aligned} \int_{CS} \rho v \cdot dA = \int_{CV} \nabla \cdot (\rho v) dV
+\end{aligned} $$  
 
-어디서 들어본 듯 하지 않는가??...
+(fixed Control Volume)
 
-상태 + 행동, 거의 클래스네?!!
+$$ \begin{aligned} \frac{d m_{sys}}{dt} &=  \int_{CV} \frac{\partial{\rho}}{\partial{t}} dV + \int_{CV} \nabla \cdot (\rho v) dV = 0
+\end{aligned} $$  
 
+$$ \begin{aligned} \int_{CV} [\frac{\partial{\rho}}{\partial{t}} + \nabla \cdot (\rho v) ] dV = 0
+\end{aligned} $$  
 
+위 식이 항상 만족하기 위해서는, 적분 내부항이 0이여야 하기 때문에,  
 
-클로져를 활용해서~!
+$$ \begin{aligned} \frac{\partial{\rho}}{\partial{t}} + \nabla \cdot (\rho v) = 0
+\end{aligned} $$  
 
-```python
-def outer_func(a, b, *args, **kwargs):
-    def inner_func1():
-        print("yeah")
-    
-    def inner_func(x):
-        result = []
-        for val in x:
-            result.append((val+a)*b)
-        inner_func1()
-        return result
-    return inner_func
+<br/>
+Incompressible Flow (비압축 유체) 에서는 ( $$ \rho: constant, \frac{\partial{\rho}}{\partial{x^i}} = 0, \frac{\partial{\rho}}{\partial{t}} = 0 $$ )
 
-myfunc1 = outer_func(2,10)
-print(myfunc1([1,2,3,4,5]))
-# yeah
-# [30, 40, 50, 60, 70]
-```
-
-
-
-클래스를 활용해서~!
-
-```python
-class Inner_func:
-    def __init__(self, a, b):
-        self.a = a
-        self.b = b
-        
-    def inner_func(self):
-        print("yeah")
-    
-    def __call__(self, x):
-        result = []
-        for val in x:
-            result.append((val+self.a)*self.b)
-        self.inner_func()
-        return result
-
-myfunc2 = Inner_func(2,10)
-print(myfunc2([1,2,3,4,5]))
-# yeah
-# [30, 40, 50, 60, 70]
-```
+$$ \begin{aligned} \nabla \cdot v = 0
+\end{aligned} $$  
 
 
+<br/>
 
-그렇네.... 물론 직접적으로 멤버변수, 메소드에 접근하는 `.`의 활용 등은 안되지만,
+Steady-State (정상 상태) 에서는 ( $$ \frac{\partial}{\partial{t}} = 0 $$ )
+
+$$ \begin{aligned} \nabla \cdot (\rho v) = 0
+\end{aligned} $$  
+
+<br/>
+<br/>
+
+#### Linear Momentum Conservation (선형 모멘텀 보존식) 
+----
+
+뉴턴 제2법칙을 알고있다면 친숙하시겠지만, 시간에 따른 선형모멘텀의 변화 즉 선형모멘텀의 시간 미분이 **힘** 으로 표현됩니다.
+  
+
+$$ \begin{aligned} \frac{d (mv)_{sys}}{dt} &= \Sigma F =  \frac{\partial}{\partial{t}} \int_{CV} \rho v dV + \int_{CS} \rho v (v \cdot dA)
+\end{aligned} $$  
+
+<br/>
+
+$$ \begin{aligned} \Sigma F = F_{pressure} + F_{viscous} + F_{gravity} 
+\end{aligned} $$  
+
+<br/>
+
+###### - Cartesian Fixed Control Volume
+----
+
+$$ x $$축만을 놓고 보면,
+
+$$ \begin{aligned} \Sigma dF_x &=  -\frac{\partial{P}}{\partial{x}}dV + \frac{\partial{\sigma_{xx}}}{\partial{x}}dV + \frac{\partial{\tau_{yx}}}{\partial{y}}dV + \frac{\partial{\tau_{zx}}}{\partial{z}}dV + \rho g_x dV
+\end{aligned} $$  
+
+where, $$ dV = dxdydz $$  
+
+$$ \tau $$ 를 2차텐서로 아래와 같이 정의하여 3축의 식을 한 식으로 표현하면,  
+
+$$ \tau = \begin{pmatrix} \sigma_{xx} & \tau_{xy} & \tau_{xz} \\\ \tau_{yx} & \sigma_{yy} & \tau_{yz} \\\ \tau_{zx} & \tau_{zy} & \sigma_{zz} \end{pmatrix} $$
+
+<br/>  
+
+$$ \begin{aligned} \Sigma dF &= (-\nabla P + \nabla \cdot \tau + \rho g)dV
+\end{aligned} $$  
+
+
+<br/>
+
+$$ \begin{aligned} \frac{\partial}{\partial{t}} \int_{CV} \rho v dV + \int_{CS} \rho v (v \cdot dA) &= \frac{\partial{\rho v}}{\partial{t}}dV + \frac{\partial{u \rho v}}{\partial{x}}dV + \frac{\partial{\nu \rho v}}{\partial{y}}dV + \frac{\partial{w \rho v}}{\partial{z}}dV
+\end{aligned} $$  
+
+<br/>
 
 
 
-클로져를 활용하면 어느 면에서는 마치 클래스처럼 상태 또는 메소드를 가지고 있듯이 함수를 사용할 수 있다.
+$$ \begin{aligned} \therefore (-\nabla P + \nabla \cdot \tau + \rho g)dV = \frac{\partial{\rho v}}{\partial{t}}dV + \frac{\partial{u \rho v}}{\partial{x}}dV + \frac{\partial{\nu \rho v}}{\partial{y}}dV + \frac{\partial{w \rho v}}{\partial{z}}dV
+\end{aligned} $$  
 
-이정도로만 일단 알아두자~!
-<br>
-<br>
+<br/>
+
+$$ \begin{aligned} -\nabla P + \nabla \cdot \tau + \rho g = \frac{\partial{\rho v}}{\partial{t}} + \frac{\partial{u \rho v}}{\partial{x}} + \frac{\partial{\nu \rho v}}{\partial{y}} + \frac{\partial{w \rho v}}{\partial{z}}
+\end{aligned} $$  
+
+<br/>
+
+###### - Reynolds Transport Theorem with Gauss's Divergence Theorem  
+----
+(fixed Control Volume)  
+
+$$ \begin{aligned} F_{pressure} + F_{viscous} + F_{gravity}  =  \frac{\partial}{\partial{t}} \int_{CV} \rho v dV + \int_{CS} \rho v (v \cdot dA)
+\end{aligned} $$  
+
+<br/>
+
+Caution: $$ dA = \lvert dA \rvert \vec{n} $$ 
+
+$$ \begin{aligned} F_{pressure} = \int_{CS} -P dA
+\end{aligned} $$  
+
+$$ \begin{aligned} F_{viscous} = \int_{CS} \tau \cdot dA
+\end{aligned} $$  
+
+$$ \begin{aligned} F_{gravity} = \int_{CV} \rho g  dV
+\end{aligned} $$  
 
 
-**결론,**
-
-**클로져는 클래스의 객체와 비슷한 함수이다.**
