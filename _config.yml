@@ -114,16 +114,20 @@ collections:
     permalink: /:collection/:name
   statistics:
     output: true
-    order: chapter
+    order: [chapter]
   ml:
-    output: true
+    output: false
   linux:
-    output: true
+    output: false
   dynamics:
-    output: true
+    output: false
   oracle:
-    output: true
+    output: false
   algoDS:
+    output: false
+  python:
+    output: true
+  physics:
     output: true
 
 

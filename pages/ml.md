@@ -5,6 +5,7 @@ subtitle: Go to the basic.
 permalink: /machine_learning/
 feature-img: "assets/img/pexels/computer.jpeg"
 tags: [Machine Learning Topics]
+hide: true
 ---
 
 

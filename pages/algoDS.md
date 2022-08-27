@@ -5,6 +5,7 @@ subtitle: Data Structures & Algorithms.
 permalink: /algoDS/
 feature-img: "assets/img/pexels/computer.jpeg"
 tags: [Data Structure, Algorithm]
+hide: true
 ---
 
 
