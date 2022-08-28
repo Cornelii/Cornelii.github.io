@@ -103,11 +103,14 @@ $$ \text{where } F_{\mu \alpha}  = \frac{\partial{A_{\alpha}}}{\partial{x_{\mu}}
 
 #### Maxwell's Equations
 ----
-$$ \begin{aligned}  F^{\mu \alpha} = -F^{\alpha \mu }  \end{aligned} $$
+$$ \begin{aligned}  F^{\mu \alpha} = -F^{\alpha \mu } \text{, } F^{\mu \mu} = 0  \end{aligned} $$  
+
+with natural units and Heaviside–Lorentz units. 
+$$ \begin{aligned} c = 1, \epsilon_0 = 1, \mu_0 = 1 \end{aligned} $$  
 
 $$ \text{let } F^{\mu \alpha} = \begin{pmatrix} 0 & E^x & E^y & E^z \\\ -E^x & 0 & B^z & -B^y \\\ -E^y & -B^z & 0 & B^x \\\ -E^z & B^y & -B^x & 0 \end{pmatrix} $$
 
-$$ \begin{aligned} \text{let } J^{\mu} \text{ four current } (\rho, j^i)\end{aligned} $$
+$$ \begin{aligned} \text{let } J^{\mu} \text{ four current } (\rho, \vec{J})\end{aligned} $$
 <br/>
 then,
 
@@ -119,7 +122,7 @@ $$ \begin{aligned} \nabla \cdot E = \rho \end{aligned} $$
 
 $$ \begin{aligned} \text{when } \mu = i \text{, } \text{ } \text{ } F^{i \alpha},_{\alpha} = J^{i} \end{aligned} $$
 
-$$ \begin{aligned} -\frac{\partial{E}}{\partial{t}} + \nabla \times B = j  \end{aligned} $$
+$$ \begin{aligned} -\frac{\partial{E}}{\partial{t}} + \nabla \times B = \vec{J}  \end{aligned} $$
 
 <br/>
 And, $$ F^{\mu \nu} $$ automatically holds Bianchi identity with four independent equations.  
@@ -150,7 +153,7 @@ Now we've just got Maxwell's equations here!
 
 $$ \begin{aligned} \nabla \cdot E = \rho \end{aligned} $$  
 
-$$ \begin{aligned} -\frac{\partial{E}}{\partial{t}} + \nabla \times B = j  \end{aligned} $$  
+$$ \begin{aligned} -\frac{\partial{E}}{\partial{t}} + \nabla \times B = \vec{J}  \end{aligned} $$  
 
 $$  \nabla \cdot B = 0 $$  
 

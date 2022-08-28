@@ -187,7 +187,7 @@ $$ \begin{aligned} \Sigma dF &= (-\nabla P + \nabla \cdot \tau + \rho g)dV
 
 <br/>
 
-$$ \begin{aligned} \frac{\partial}{\partial{t}} \int_{CV} \rho v dV + \int_{CS} \rho v (v \cdot dA) &= \frac{\partial{\rho v}}{\partial{t}}dV + \frac{\partial{u \rho v}}{\partial{x}}dV + \frac{\partial{\nu \rho v}}{\partial{y}}dV + \frac{\partial{w \rho v}}{\partial{z}}dV
+$$ \begin{aligned} \frac{\partial{\rho v}}{\partial{t}} dV + [\rho v (v \cdot dA)]_{+out -in} &= \frac{\partial{\rho v}}{\partial{t}}dV + \frac{\partial{u \rho v}}{\partial{x}}dV + \frac{\partial{\nu \rho v}}{\partial{y}}dV + \frac{\partial{w \rho v}}{\partial{z}}dV
 \end{aligned} $$  
 
 <br/>
@@ -199,8 +199,47 @@ $$ \begin{aligned} \therefore (-\nabla P + \nabla \cdot \tau + \rho g)dV = \frac
 
 <br/>
 
-$$ \begin{aligned} -\nabla P + \nabla \cdot \tau + \rho g = \frac{\partial{\rho v}}{\partial{t}} + \frac{\partial{u \rho v}}{\partial{x}} + \frac{\partial{\nu \rho v}}{\partial{y}} + \frac{\partial{w \rho v}}{\partial{z}}
+$$ \begin{aligned} -\nabla P + \nabla \cdot \tau + \rho g &= \frac{\partial{\rho v}}{\partial{t}} + \frac{\partial{u \rho v}}{\partial{x}} + \frac{\partial{\nu \rho v}}{\partial{y}} + \frac{\partial{w \rho v}}{\partial{z}} \\
+&= \rho \frac{\partial{v}}{\partial{t}} + v \frac{\partial{\rho}}{\partial{t}} + u \rho  \frac{\partial{v}}{\partial{x}} + \nu \rho \frac{\partial{v}}{\partial{y}} + w \rho \frac{\partial{v}}{\partial{z}} + v \frac{\partial{u \rho}}{\partial{x}} + v \frac{\partial{\nu \rho}}{\partial{y}} + v \frac{\partial{w \rho}}{\partial{z}} \\
+&= \rho \frac{\partial{v}}{\partial{t}} + u \rho  \frac{\partial{v}}{\partial{x}} + \nu \rho \frac{\partial{v}}{\partial{y}} + w \rho \frac{\partial{v}}{\partial{z}} + v ( \frac{\partial{\rho}}{\partial{t}} + \frac{\partial{u \rho}}{\partial{x}} + \frac{\partial{\nu \rho}}{\partial{y}} + \frac{\partial{w \rho}}{\partial{z}}) 
 \end{aligned} $$  
+
+because last four terms are of continuity equation, which becomes zero  
+
+$$
+\begin{aligned}
+-\nabla P + \nabla \cdot \tau + \rho g &= \rho \frac{\partial{v}}{\partial{t}} + u \rho  \frac{\partial{v}}{\partial{x}} + \nu \rho \frac{\partial{v}}{\partial{y}} + w \rho \frac{\partial{v}}{\partial{z}} \\
+&= \rho (\frac{\partial{v}}{\partial{t}} + u \frac{\partial{v}}{\partial{x}} + \nu \frac{\partial{v}}{\partial{y}} + w \frac{\partial{v}}{\partial{z}}) \\
+&= \rho \frac{dv}{dt}
+\end{aligned}
+$$
+
+<br/>
+
+If viscousity terms are represented by Newtonian Fluid  
+
+$$ \tau_{ij} = \mu (\frac{\partial{v_i}}{\partial{x_j}} + \frac{\partial{v_j}}{\partial{x_i}}) $$  
+
+$$ \nabla \cdot \tau = \mu (\nabla^2 v + \nabla (\nabla \cdot v)) $$  
+
+$$
+\begin{aligned}
+\rho \frac{dv}{dt} &= -\nabla P + \mu (\nabla^2 v + \nabla (\nabla \cdot v)) + \rho g 
+\end{aligned}
+$$  
+
+For the incompressible flow  
+$$ \nabla \cdot v = 0 $$  
+
+<br/>
+
+$$
+\begin{aligned}
+\rho \frac{dv}{dt} &= -\nabla P + \mu \nabla^2 v + \rho g 
+\end{aligned}
+$$  
+
+We've just got Navier-Stokes Equation for incompressible flow!
 
 <br/>
 
@@ -215,13 +254,55 @@ $$ \begin{aligned} F_{pressure} + F_{viscous} + F_{gravity}  =  \frac{\partial}{
 
 Caution: $$ dA = \lvert dA \rvert \vec{n} $$ 
 
-$$ \begin{aligned} F_{pressure} = \int_{CS} -P dA
-\end{aligned} $$  
+let's take $$ F_{pressure} $$ into $$ F_{viscous} $$ with $$ \hat \tau $$  
 
-$$ \begin{aligned} F_{viscous} = \int_{CS} \tau \cdot dA
+$$ \hat \tau = \begin{pmatrix} \sigma_{xx} - p & \tau_{xy} & \tau_{xz} \\\ \tau_{yx} & \sigma_{yy} - p & \tau_{yz} \\\ \tau_{zx} & \tau_{zy} & \sigma_{zz} - p \end{pmatrix} = \tau - pI$$
+
+
+$$ \begin{aligned} F_{viscous + pressure} = \int_{CS} \hat \tau \cdot dA
 \end{aligned} $$  
 
 $$ \begin{aligned} F_{gravity} = \int_{CV} \rho g  dV
 \end{aligned} $$  
 
+<br/>
+
+$$ \begin{aligned} \int_{CS} \hat \tau \cdot dA + \int_{CV} \rho g  dV = \frac{\partial}{\partial{t}} \int_{CV} \rho v dV + \int_{CS} \rho v (v \cdot dA)
+\end{aligned} $$  
+
+$$ \begin{aligned} \int_{CV} \nabla \cdot \hat \tau dV + \int_{CV} \rho g  dV = \int_{CV} \frac{\partial{\rho v}}{\partial{t}} dV + \int_{CV} \nabla \cdot (\rho v) v + \rho v \cdot \nabla v dV
+\end{aligned} $$  
+
+For it holds regardless of CV  
+
+$$ \begin{aligned} \nabla \cdot \hat \tau + \rho g = \frac{\partial{\rho v}}{\partial{t}} + \nabla \cdot (\rho v) v + \rho v \cdot \nabla v
+\end{aligned} $$  
+
+$$
+\begin{aligned}
+-\nabla p + \nabla \cdot \tau + \rho g &= \rho \frac{\partial{v}}{\partial{t}} + v \frac{\partial{\rho}}{\partial{t}} + \nabla \cdot (\rho v) v + \rho v \cdot \nabla v \\
+&= \rho \frac{\partial{v}}{\partial{t}} + \rho v \cdot \nabla v + (\frac{\partial{\rho}}{\partial{t}} + \nabla \cdot (\rho v))v \\
+&= \rho \frac{\partial{v}}{\partial{t}} + \rho v \cdot \nabla v \\
+&= \rho \frac{dv}{dt}
+\end{aligned}
+$$
+
+As mentioned before, applying Newtonian Fluid Assumption for viscous term.  
+
+$$
+\begin{aligned}
+\rho \frac{dv}{dt} &= -\nabla p + \mu (\nabla^2 v + \nabla (\nabla \cdot v)) + \rho g 
+\end{aligned}
+$$  
+
+For the incompressible flow  
+$$ \nabla \cdot v = 0 $$  
+
+<br/>
+
+$$
+\begin{aligned}
+\rho \frac{dv}{dt} &= -\nabla p + \mu \nabla^2 v + \rho g 
+\end{aligned}
+$$  
 
