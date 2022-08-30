@@ -57,7 +57,7 @@ $$ \delta x^{\mu} (t_1) = \delta x^{\mu} (t_2) = 0 $$
 
 $$ \begin{aligned} 
 \delta I &= \int^{t_2}_{t_1} m g_{\mu \nu} \frac{dx^{\nu}}{d\tau} \frac{d (\delta  x^{\mu})}{dt} dt  - e[ \int^{t_2}_{t_1} g_{\mu \nu} \frac{\partial{A^{\nu}}}{\partial{x_{\alpha}}}\delta x^{\alpha} \frac{dx^{\mu}}{dt} dt + \int^{t_2}_{t_1} g_{\mu \nu}A^{\nu} \frac{d(\delta x^{\mu})}{dt} dt] \\
-&= m g_{\mu \nu} \frac{dx^{\nu}}{d\tau} \delta  x^{\mu} \biggr\rvert^{t_2}_{t_1} - \int^{t_2}_{t_1} m g_{\mu \nu}  \delta  x^{\mu} \frac{d}{dt} (\frac{dx^{\nu}}{d\tau}) dt  - e \int^{t_2}_{t_1} g_{\mu \nu} \frac{\partial{A^{\nu}}}{\partial{x_{\alpha}}}\delta x^{\alpha} \frac{dx^{\mu}}{dt} dt \\ & \text{ } -e g_{\mu \nu}A^{\nu} \delta x^{\mu} \biggr\rvert^{t_2}_{t_1} -e \int^{t_2}_{t_1} g_{\mu \nu} \delta x^{\mu} \frac{d(A^{\nu})}{dt} dt \\
+&= m g_{\mu \nu} \frac{dx^{\nu}}{d\tau} \delta  x^{\mu} \biggr\rvert^{t_2}_{t_1} - \int^{t_2}_{t_1} m g_{\mu \nu}  \delta  x^{\mu} \frac{d}{dt} (\frac{dx^{\nu}}{d\tau}) dt  - e \int^{t_2}_{t_1} g_{\mu \nu} \frac{\partial{A^{\nu}}}{\partial{x_{\alpha}}}\delta x^{\alpha} \frac{dx^{\mu}}{dt} dt \\ & \text{ } -e g_{\mu \nu}A^{\nu} \delta x^{\mu} \biggr\rvert^{t_2}_{t_1} +e \int^{t_2}_{t_1} g_{\mu \nu} \delta x^{\mu} \frac{d(A^{\nu})}{dt} dt \\
 \\
 &= - \int^{t_2}_{t_1} m g_{\mu \nu}  \delta  x^{\mu} \frac{d}{dt} (\frac{dx^{\nu}}{d\tau}) dt  - e \int^{t_2}_{t_1} g_{\mu \nu} \frac{\partial{A^{\nu}}}{\partial{x_{\alpha}}}\delta x^{\alpha} \frac{dx^{\mu}}{dt} dt +e \int^{t_2}_{t_1} g_{\mu \nu} \delta x^{\mu} \frac{dA^{\nu}}{dt} dt
 \\
@@ -96,7 +96,7 @@ m \frac{d^2x_{\mu}}{d\tau^2} &= e ( \frac{\partial{A_{\alpha}}}{\partial{x_{\mu}
 &= e F_{\mu \alpha} \frac{dx^{\alpha}}{d\tau} = e F_{\mu \alpha} U^{\alpha}
 \end{aligned} $$  
 
-$$ \text{where } F_{\mu \alpha}  = \frac{\partial{A_{\alpha}}}{\partial{x_{\mu}}} - \frac{dA_{\mu}}{dx_{\alpha}} $$
+$$ \text{where } F_{\mu \alpha}  = \frac{\partial{A_{\alpha}}}{\partial{x_{\mu}}} - \frac{\partial{A_{\mu}}}{\partial{x_{\alpha}}} $$
 
 <br/>
 <br/>
